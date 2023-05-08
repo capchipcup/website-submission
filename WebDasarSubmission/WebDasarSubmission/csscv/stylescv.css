@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+* {
+    background-color: #efcd5d;
+}
+
+  body {
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 20px;
+   
+    display: flex;
+    flex-direction: column;
+  }
+
+  header.headercontainer {
+    height: 125px;
+    min-height: auto;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+       
+    padding-block: 0;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+  }
+   
+  header.headercontainer .logo img {
+    height: 120px;    
+  }
+   
+  header.headercontainer .barlist ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem 1rem;
+  }
+   
+  header.headercontainer .barlist li {
+    list-style-type: none;
+  }
+   
+  header.headercontainer .barlist li a {
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: black;
+    padding: .5rem 1.5rem;
+    border-radius: 999px;
+    transition: all .2s ease-in-out;    
+  }
+   
+  header.headercontainer .barlist li:hover a {
+    background-color: #365023;
+    color: white;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+  }
+
+  header {
+    display: inline;
+  }
+
+  h1 {
+    color: #365023;
+    font-weight:900;
+    font-size: xx-large;
+    text-align: center;
+  }
+
+  h2 {
+    color:white;
+    font-weight: bolder;
+    font-size: x-large;
+    font-style: oblique;
+    text-align: center;
+  }
+   
+  main {
+    max-width: 1200px;
+    width: 100%;
+    margin-inline: auto;
+    padding: 10rem 5rem 3rem 5rem;
+    flex: 1;
+   
+    display: flex;
+  }
+
+  .card {
+    box-shadow: 0 2px 8px 2px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+  }
+   
+  .featured-image {
+    margin: auto;
+    min-width: 200px;
+    width: 400px;
+    height: auto;
+    display: flex;
+  }
+
+  aside {
+    float: right;
+    width: 25%;
+    padding-left: 15px;
+    text-align: center;
+  }
+
+  .bio {
+    width: 180px;
+  }
+   
+  .kaki {
+    text-align: center;
+    color: #365023;
+    font-weight: 900;
+    font-stretch: ultra-expanded;
+    background-color: white;
+    width: 100%;
+    margin-top: 0;
+    align-items: center;
+  }
+
+  .tbl {
+    align-content: center;
+  }
+  
+@media screen and (max-width: 1000px) {
+    #content,
+    aside {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+@media screen and (max-width: 1200px) {
+    main {
+        flex-flow: column nowrap;
+    }
+    main aside {
+        align-self: center;
+    }     
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+      justify-content: center;
+    }
+   
+    main aside {
+      align-self: stretch;
+    }
+  }

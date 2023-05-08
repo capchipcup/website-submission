@@ -1,0 +1,99 @@
+//Kriteria 4 : API dapat menampilkan seluruh buku
+const getAllBooksHandler = (request, h) => {
+    const { name, reading, finished} = request.query;
+    let filterbooks = books;
+    if (name) {
+        filterbooks = books.filter(
+            (book) => book.name.toLowerCase().includes(name.toLowerCase()),
+        );
+
+        const response = h.response({
+            status: "success",
+            data: {
+                books: filterbooks.map ((book) => ({
+                    id: book.id,
+                    name: book.name,
+                    publisher: book.publisher,
+                })),
+            },
+        });
+        response.code(200);
+        return response;
+    }
+    if (reading) {
+        if (reading === '0') {
+            filterbooks = books.filter((book) => book.reading === false);
+            const response = h.response ({
+                status: "success",
+                data:{
+                    books: filterbooks.map ((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
+                },
+            });
+            response.code(200);
+            return response;
+        }
+        if (reading === '1') {
+            filterbooks = filterbooks.filter((book) => book.reading === true);
+            const response = h.response ({
+                status: "success",
+                data: {
+                    books: filterbooks.map((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
+                },
+            });
+            response.code(200);
+            return response;
+        }
+    }
+    if (finished) {
+        if (finished === '0') {
+            filterbooks = books.filter((book) => book.finished === false);
+            const response = h.response ({
+                status: "success",
+                data: {
+                    books: filterbooks.map((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
+                },
+            });
+            response.code(200);
+            return response;
+        }
+        if (finished === '1') {
+            filterbooks = books.filter((book) => book.finished === true);
+            const response = h.response ({
+                status: "success",
+                data: {
+                    books: filterbooks.map((book) => ({
+                        id: book.id,
+                        name: book.name,
+                        publisher: book.publisher,
+                    })),
+                },
+            });
+            response.code(200);
+            return response;
+        }
+    }
+    const response = h.response ({
+        status: "success",
+        data: {
+            books: filterbooks.map((book) => ({
+                id: book.id,
+                name: book.name,
+                publisher: book.publisher,
+            })),
+        },
+    });
+    response.code(200);
+    return response;
+};
